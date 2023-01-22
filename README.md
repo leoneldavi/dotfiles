@@ -5,6 +5,7 @@ The needed packages are as follows:
 
 - i3wm
 - i3blocks
+- stow
 - picom
 - dunst
 - feh
