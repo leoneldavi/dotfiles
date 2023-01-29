@@ -10,6 +10,9 @@ The needed packages are as follows:
 - dunst
 - feh
 - alacritty
+- lf
+- nvim
+- mpv
 - keyd (aur)
 - oldschool-pc-fonts (aur)
 - awesome-terminal-fonts
