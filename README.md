@@ -27,7 +27,6 @@ There are some bash scripts that can help you putting all the files in place.
 I recommend this order:
 ```
 sh ~/.dotfiles/scripts/makedesktopfiles.sh
-sh ~/.dotfiles/scripts/installdependencies.sh
 sh ~/.dotfiles/scripts/uninstalloldfiles.sh
 sh ~/.dotfiles/scripts/installoutsidehomefolder.sh
 ```
