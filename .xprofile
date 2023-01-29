@@ -1,0 +1,12 @@
+xrandr --newmode "1280x720_40.00"   47.25  1280 1320 1440 1600  720 723 728 740 -hsync +vsync
+xrandr --addmode eDP-1 1280x720_40.00
+synclient tapbutton1=1
+synclient minspeed=1.5
+synclient maxspeed=1.5
+synclient accelfactor=0
+export TERMINAL=/usr/bin/alacritty
+export SCRIPT_DIR=/home/leonel/i3blocksScripts/
+xrandr --output eDP-1 --mode 1280x720_40.00 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-1 --primary --mode 1366x768 --pos 0x0 --rotate normal --output DP-2 --off --output HDMI-2 --off
+light -N 0.02
+xset r rate 300 35
+setxkbmap us

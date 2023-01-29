@@ -1,0 +1,6 @@
+loop-playlist=inf
+vo=x11 
+vd-lavc-fast 
+demuxer-thread=no
+sws-fast=1
+sws-scaler=fast-bilinear
