@@ -16,3 +16,8 @@ The needed packages are as follows:
 - scrot
 - adwaita-dark (aur)
 - elementary-icon-theme
+# installation
+```
+git clone https://github.com/leoneldavi/dotfiles/ ~/.dotfiles
+```
+There are some bash scripts that can help you putting all the files in place.
