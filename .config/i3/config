@@ -15,7 +15,7 @@ set $mod Mod4
 # is used in the bar {} block below.
 # font pango:Monospace Bold 9
 # font pango:BmPlus IBM VGA 8x16
-font pango:BmPlus IBM EGA 8x8 6
+font pango:Cantarell Extra Bold 8
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -191,16 +191,27 @@ bar {
 	position top 
         status_command i3blocks
 	i3bar_command i3bar --transparency
+#    colors {
+#        background #00000077
+#        statusline #ffffff
+#        separator #ffffff
+#
+#        focused_workspace  #00000077 #00000077 #ffffff
+#        active_workspace   #00000077 #00000077 #999999
+#        inactive_workspace #00000077 #00000077 #999999
+#        urgent_workspace   #2f343a77 #90000077 #ffffff
+#        binding_mode       #2f343a77 #90000077 #ffffff
+#}}
     colors {
-        background #00000077
+        background #454545
         statusline #ffffff
         separator #ffffff
 
-        focused_workspace  #00000077 #00000077 #ffffff
-        active_workspace   #00000077 #00000077 #999999
-        inactive_workspace #00000077 #00000077 #999999
-        urgent_workspace   #2f343a77 #90000077 #ffffff
-        binding_mode       #2f343a77 #90000077 #ffffff
+        focused_workspace  #454545 #454545 #ffffff
+        active_workspace   #454545 #454545 #999999
+        inactive_workspace #454545 #454545 #999999
+        urgent_workspace   #2f343a #900000 #ffffff
+        binding_mode       #2f343a #900000 #ffffff
 }}
 
 # class                 border  backgr. text    indicator child_border
@@ -212,9 +223,9 @@ bar {
 # client.background       #ffffff
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.focused          #454545 #454545 #ffffff #45458B   #454545
+client.focused_inactive #111111 #111111 #888888 #45458B   #111111
+client.unfocused        #111111 #111111 #888888 #45458B   #111111
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
@@ -239,7 +250,7 @@ for_window [class=".*"] border normal 1
 for_window [all] title_window_icon padding 3px
 
 # execute picom
-exec_always picom
+# exec_always picom
 
 # executes polybar (not using it anymore... too bloat lol)
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
