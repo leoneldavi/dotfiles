@@ -5,4 +5,8 @@ export SCRIPT_DIR=/home/leonel/i3blocksScripts/
 xrandr --output VGA-1 --mode 800x600 --scale 1
 light -N 0.02
 xset r rate 200 35
-setxkbmap us
+setxkbmap br
+synclient tapbutton1=1
+synclient minspeed=1.5
+synclient maxspeed=1.5
+synclient accelfactor=0
