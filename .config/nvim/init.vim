@@ -6,4 +6,5 @@ set softtabstop=4
 set shiftwidth=4
 call plug#begin("~/.config/nvim/autoload/plugged")
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'LunarWatcher/auto-pairs'
 call plug#end()

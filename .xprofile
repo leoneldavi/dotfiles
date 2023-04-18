@@ -2,7 +2,7 @@ xrandr --newmode "640x480_100.00"   42.50  640 672 736 832  480 483 487 512 -hsy
 xrandr --addmode VGA-1 640x480_100.00
 export TERMINAL=/usr/bin/alacritty
 export SCRIPT_DIR=/home/leonel/i3blocksScripts/
-xrandr --output VGA-1 --mode 800x600 --scale 1
+xrandr --output VGA-1 --mode 800x600 --scale 1.28
 light -N 0.02
 xset r rate 200 35
 setxkbmap us
