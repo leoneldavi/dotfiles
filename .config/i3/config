@@ -301,4 +301,5 @@ bindsym $mod+equal sticky toggle
 # bindsym $mod+h (magical dmenu script)
 
 # rename workspace
-bindsym $mod+m exec i3-input -F 'rename workspace to "%s"' -P 'Rename: '
+#bindsym $mod+m exec i3-input -F 'rename workspace to "%s"' -P 'Rename: '
+bindsym $mod+m exec ~/.config/i3/rename_workspace.sh
