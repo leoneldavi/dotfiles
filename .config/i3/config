@@ -38,7 +38,9 @@ exec --no-startup-id nm-applet
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym $mod+p exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym $mod+o exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 # Brightness up and down.
@@ -211,17 +213,6 @@ bar {
 	position bottom 
         status_command i3blocks
 	i3bar_command i3bar --transparency
-#    colors {
-#        background #00000077
-#        statusline #ffffff
-#        separator #ffffff
-#
-#        focused_workspace  #00000077 #00000077 #ffffff
-#        active_workspace   #00000077 #00000077 #999999
-#        inactive_workspace #00000077 #00000077 #999999
-#        urgent_workspace   #2f343a77 #90000077 #ffffff
-#        binding_mode       #2f343a77 #90000077 #ffffff
-#}}
     colors {
         background #454545
         statusline #ffffff
@@ -236,19 +227,11 @@ bar {
 }
 
 # class                 border  backgr. text    indicator child_border
-# client.focused          #FFFFFFAA #AAAAAAAA #ffffff #FFFFFF   #FFFFFFAA
-# client.focused_inactive #555555AA #999999AA #ffffff #484e50   #555555
-# client.unfocused        #333333AA #222222AA #888888 #292d2e   #222222
-# client.urgent           #2f343a #900000 #ffffff #900000   #900000
-# client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-# client.background       #ffffff
-
-# class                 border  backgr. text    indicator child_border
-client.focused          #454545 #454545 #ffffff #45458B   #454545
-client.focused_inactive #111111 #111111 #888888 #45458B   #111111
-client.unfocused        #111111 #111111 #888888 #45458B   #111111
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.focused          #333333 #454545 #ffffff #45458B   #333333
+client.focused_inactive #0A0A0A #111111 #888888 #45458B   #0A0A0A
+client.unfocused        #0A0A0A #111111 #888888 #45458B   #0A0A0A
+client.urgent           #2f343a #900000 #ffffff #900000   #2f343a
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #000000
 client.background       #ffffff
 
 # sets scrot (screenshotting package) bind
@@ -271,7 +254,7 @@ for_window [class=".*"] border normal 2
 for_window [all] title_window_icon padding 3px
 
 # execute picom
-# exec_always picom
+exec_always picom
 
 # executes polybar (not using it anymore... too bloat lol)
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh

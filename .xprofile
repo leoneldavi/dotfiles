@@ -3,3 +3,4 @@ export SCRIPT_DIR=/home/leonel/i3blocksScripts/
 light -N 0.02
 xset r rate 200 35
 setxkbmap us
+synclient tapbutton1=1
