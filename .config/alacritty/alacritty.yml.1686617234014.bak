@@ -138,30 +138,30 @@ font:
   # Thin strokes are suitable for retina displays, but for non-retina screens
   # it is recommended t
 colors:
-  name: vscode (dark)
-  author: senpai-10
+  name: Default (light)
+  author: Chris Kempson
   primary:
-    background: "#1E1E1E"
-    foreground: "#D4D4D4"
+    background: "#f5f5f5"
+    foreground: "#303030"
   cursor:
-    text: "#1d1f21"
-    cursor: "#cccccc"
+    text: "#f5f5f5"
+    cursor: "#303030"
   normal:
-    black: "#000000"
-    red: "#cd3131"
-    green: "#0dbc79"
-    yellow: "#e5e510"
-    blue: "#2472c8"
-    magenta: "#bc3fbc"
-    cyan: "#11a8cd"
-    white: "#e5e5e5"
+    black: "#151515"
+    red: "#ac4142"
+    green: "#90a959"
+    yellow: "#f4bf75"
+    blue: "#6a9fb5"
+    magenta: "#aa759f"
+    cyan: "#75b5aa"
+    white: "#d0d0d0"
   bright:
-    black: "#666666"
-    red: "#f14c4c"
-    green: "#23d18b"
-    yellow: "#f5f543"
-    blue: "#3b8eea"
-    magenta: "#d670d6"
-    cyan: "#29b8db"
-    white: "#e5e5e5"
-theme: vscode.dark
+    black: "#505050"
+    red: "#ac4142"
+    green: "#90a959"
+    yellow: "#f4bf75"
+    blue: "#6a9fb5"
+    magenta: "#aa759f"
+    cyan: "#75b5aa"
+    white: "#f5f5f5"
+theme: Default.light

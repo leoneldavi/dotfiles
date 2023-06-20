@@ -15,7 +15,8 @@ set $mod Mod4
 # is used in the bar {} block below.
 # font pango:Monospace Bold 9
 # font pango:BmPlus IBM VGA 8x16
-font pango:Cantarell Extra Bold 8
+#font pango:Cantarell 10
+font pango:Tahoma Regular 8
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -190,48 +191,43 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    font pango:BmPlus IBM VGA 8x16
-	position top 
+    #font pango:BmPlus IBM VGA 8x16
+    font pango: Tahoma Regular 8
+	position top
         status_command i3blocks -c "/etc/extra-i3blocks.conf"
 	i3bar_command i3bar --transparency
-    workspace_buttons no
     colors {
-        background #454545
+        background #222222
         statusline #ffffff
-        separator #ffffff
+        separator #666666
 
-        focused_workspace  #454545 #454545 #ffffff
-        active_workspace   #454545 #454545 #999999
-        inactive_workspace #454545 #454545 #999999
-        urgent_workspace   #900000 #900000 #ffffff
-        binding_mode       #900000 #900000 #ffffff
-        }
-}
+        focused_workspace  #222222 #222222 #ffffff
+        active_workspace   #333333 #5f676a #ffffff
+        inactive_workspace #222222 #222222 #888888
+        urgent_workspace   #2f343a #900000 #ffffff
+        binding_mode       #2f343a #900000 #ffffff
+    }
+    #workspace_buttons no
+    #colors {
+    #    background #454545
+    #    statusline #ffffff
+    #    separator #ffffff
 
-bar {
-    font pango:BmPlus IBM VGA 8x16
-	position bottom 
-        status_command i3blocks
-	i3bar_command i3bar --transparency
-    colors {
-        background #454545
-        statusline #ffffff
-        separator #ffffff
-
-        focused_workspace  #454545 #454545 #ffffff
-        active_workspace   #454545 #454545 #999999
-        inactive_workspace #454545 #454545 #999999
-        urgent_workspace   #900000 #900000 #ffffff
-        binding_mode       #900000 #900000 #ffffff
-        }
+    #    focused_workspace  #454545 #454545 #ffffff
+    #    active_workspace   #454545 #454545 #999999
+    #    inactive_workspace #454545 #454545 #999999
+    #    urgent_workspace   #900000 #900000 #ffffff
+    #    binding_mode       #900000 #900000 #ffffff
+    #    }
 }
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #333333 #454545 #ffffff #45458B   #333333
-client.focused_inactive #0A0A0A #111111 #888888 #45458B   #0A0A0A
-client.unfocused        #0A0A0A #111111 #888888 #45458B   #0A0A0A
-client.urgent           #2f343a #900000 #ffffff #900000   #2f343a
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #000000
+client.focused          #333333 #333333 #ffffff #333333   #222222
+client.focused_inactive #222222 #222222 #ffffff #484e50   #5f676a
+client.unfocused        #222222 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
 client.background       #ffffff
 
 # sets scrot (screenshotting package) bind
@@ -244,17 +240,17 @@ exec_always --no-startup-id feh --bg-fill ~/Desktop/Wallpapers/Selected/*
 gaps inner 0
 gaps outer 1
 
-# align titles on middle
-title_align center
+# align titles on left
+title_align left
 
 # makes titlebars, have titles, and make the bars thin
-for_window [class=".*"] border normal 2
+for_window [class=".*"] border normal 0
 
 # make icons on titlebars
-for_window [all] title_window_icon padding 3px
+for_window [all] title_window_icon padding 1px
 
 # execute picom
-exec_always picom
+#exec_always picom
 
 # executes polybar (not using it anymore... too bloat lol)
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
