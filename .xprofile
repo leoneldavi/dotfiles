@@ -10,8 +10,11 @@ xrandr --addmode VGA-1 "640x480_100.00"
 xrandr --output VGA-1 --newmode "1200x900_100.00"   75.00  1200 1264 1384 1568  900 903 907 960 interlace -hsync +vsync
 xrandr --addmode VGA-1 "1200x900_100.00"
 xrandr --output VGA-1 --newmode "1280x1024_100.00"   91.50  1280 1352 1480 1680  1024 1027 1034 1092 interlace -hsync +vsync
-xrandr --addmode VGA1 "1280x1024_100.00"
+xrandr --addmode VGA-1 "1280x1024_100.00"
 xrandr --output VGA-1 --newmode "1280x720_120.00"   77.50  1280 1344 1472 1664  720 723 728 778 interlace -hsync +vsync
 xrandr --addmode VGA-1 "1280x720_120.00"
 xrandr --newmode "1600x1200_80.00"  105.75  1600 1688 1848 2096  1200 1203 1207 1262 interlace -hsync +vsync
 xrandr --addmode VGA-1 "1600x1200_80.00"
+xrandr --newmode "1024x768_120.00"   66.75  1024 1080 1184 1344  768 771 775 830 interlace -hsync +vsync
+xrandr --addmode VGA-1 "1024x768_120.00"
+xrandr --output VGA-1 --mode "1024x768_120.00"
