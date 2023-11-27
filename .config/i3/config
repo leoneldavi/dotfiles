@@ -69,9 +69,11 @@ bindcode $mod+40 exec "dmenu_run -fn 'BmPlus IBM VGA 8x16' -sb grey"
 
 # change focus
 bindsym $mod+h focus left
+bindsym $mod+z focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
+bindsym $mod+x focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -138,7 +140,7 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
-bindsym $mod+z workspace back_and_forth
+bindsym $mod+u workspace back_and_forth
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -153,7 +155,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # loads i3lock
-bindsym $mod+Shift+x exec i3lock
+bindsym $mod+Shift+x exec "i3lock -c 333333"
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -187,6 +189,7 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+bindsym $mod+b bar mode toggle
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -194,35 +197,26 @@ bar {
     #font pango:BmPlus IBM VGA 8x16
     font pango: Tahoma Regular 8
 	position top
-        status_command i3blocks -c "/etc/extra-i3blocks.conf"
+    padding 0px 4px 0px 4px
+    tray_padding 0
+    status_command i3blocks -c "/etc/i3blocks.conf"
 	i3bar_command i3bar --transparency
+    modifier none
     colors {
-        background #222222
+        background #00000000
         statusline #ffffff
         separator #666666
 
-        focused_workspace  #222222 #222222 #ffffff
-        active_workspace   #333333 #5f676a #ffffff
-        inactive_workspace #222222 #222222 #888888
-        urgent_workspace   #2f343a #900000 #ffffff
-        binding_mode       #2f343a #900000 #ffffff
+        focused_workspace  #222222 #333333 #ffffff
+        active_workspace   #121212 #222222 #ffffff
+        inactive_workspace #121212 #222222 #888888
+        urgent_workspace   #2f343a #900000 #888888
+        binding_mode       #2f343a #900000 #888888
     }
-    #workspace_buttons no
-    #colors {
-    #    background #454545
-    #    statusline #ffffff
-    #    separator #ffffff
-
-    #    focused_workspace  #454545 #454545 #ffffff
-    #    active_workspace   #454545 #454545 #999999
-    #    inactive_workspace #454545 #454545 #999999
-    #    urgent_workspace   #900000 #900000 #ffffff
-    #    binding_mode       #900000 #900000 #ffffff
-    #    }
 }
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #333333 #333333 #ffffff #333333   #222222
+client.focused          #222222 #333333 #ffffff #333333   #222222
 client.focused_inactive #222222 #222222 #ffffff #484e50   #5f676a
 client.unfocused        #222222 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
@@ -231,13 +225,13 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
 # sets scrot (screenshotting package) bind
-bindsym --release $mod+Shift+p exec "scrot -z -s -e 'xclip -selection c -t image/png < $f && mv $f ~/Desktop/Screenshots'"
+bindsym --release $mod+Shift+s exec "scrot -z -s -e 'xclip -selection c -t image/png < $f && mv $f ~/Desktop/Screenshots'"
 
 # sets wallpaper
 exec_always --no-startup-id feh --bg-fill ~/Desktop/Wallpapers/Selected/*
 
 # sets gaps
-gaps inner 0
+gaps inner 2
 gaps outer 1
 
 # align titles on left
@@ -247,10 +241,10 @@ title_align left
 for_window [class=".*"] border normal 0
 
 # make icons on titlebars
-for_window [all] title_window_icon padding 1px
+for_window [all] title_window_icon padding 2px
 
 # execute picom
-#exec_always picom
+exec_always picom
 
 # executes polybar (not using it anymore... too bloat lol)
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
