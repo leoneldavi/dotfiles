@@ -1,0 +1,56 @@
+#dynamic_title = true
+#theme = "Hyper"
+
+[colors.bright]
+black = "#808080"
+blue = "#0066ff"
+cyan = "#00ffff"
+green = "#33ff00"
+magenta = "#cc00ff"
+red = "#fe0100"
+white = "#FFFFFF"
+yellow = "#feff00"
+
+[colors.cursor]
+cursor = "#ffffff"
+text = "#F81CE5"
+
+[colors.normal]
+black = "#000000"
+blue = "#0066ff"
+cyan = "#00ffff"
+green = "#33ff00"
+magenta = "#cc00ff"
+red = "#fe0100"
+white = "#d0d0d0"
+yellow = "#feff00"
+
+[colors.primary]
+background = "#000000"
+foreground = "#ffffff"
+
+[font]
+size = 13.0
+
+[font.bold]
+family = "BmPlus IBM VGA 8x16"
+style = "Bold"
+
+[font.bold_italic]
+family = "BmPlus IBM VGA 8x16"
+style = "Bold"
+
+[font.italic]
+family = "BmPlus IBM VGA 8x16"
+style = "Regular"
+
+[font.normal]
+family = "BmPlus IBM VGA 8x16"
+style = "Regular"
+
+[window]
+opacity = 1.0
+
+[window.padding]
+x = 3
+y = 3

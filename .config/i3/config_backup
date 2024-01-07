@@ -198,29 +198,30 @@ bar {
     #font pango:BmPlus IBM VGA 8x16
     font pango: Tahoma Regular 10
 	position top
+    padding 0px 4px 0px 4px
     tray_padding 0
     status_command i3blocks -c "/etc/i3blocks.conf"
 	i3bar_command i3bar --transparency
     modifier none
     colors {
-        background #c0c0c0
+        background #00000000
         statusline #ffffff
         separator #666666
 
-        focused_workspace  #ffffff #dfdfdf #000000
-        active_workspace   #ffffff #c0c0c0 #000000
-        inactive_workspace #c0c0c0 #c0c0c0 #777777
-        urgent_workspace   #ff0000 #ff0000 #c0c0c0
-        binding_mode       #ff0000 #ff0000 #c0c0c0
+        focused_workspace  #222222 #333333 #ffffff
+        active_workspace   #121212 #222222 #ffffff
+        inactive_workspace #121212 #222222 #888888
+        urgent_workspace   #2f343a #900000 #888888
+        binding_mode       #2f343a #900000 #888888
     }
 }
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #ffffff #dfdfdf #000000 #ffffff   #c0c0c0
-client.focused_inactive #c0c0c0 #c0c0c0 #000000 #ffffff   #c0c0c0
-client.unfocused        #808080 #c0c0c0 #777777 #ffffff   #c0c0c0
-client.urgent           #ff0000 #ff0000 #c0c0c0 #ffffff   #c0c0c0
-client.placeholder      #000000 #c0c0c0 #000000 #000000   #c0c0c0
+client.focused          #222222 #333333 #ffffff #333333   #222222
+client.focused_inactive #222222 #222222 #ffffff #484e50   #5f676a
+client.unfocused        #222222 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 client.background       #ffffff
 
@@ -238,7 +239,7 @@ gaps outer 1
 title_align left
 
 # makes titlebars, have titles, and make the bars thin
-for_window [class=".*"] border normal 1
+for_window [class=".*"] border normal 0
 
 # make icons on titlebars
 for_window [all] title_window_icon padding 2px
