@@ -232,7 +232,7 @@ exec_always --no-startup-id feh --bg-fill ~/Desktop/Wallpapers/Selected/*
 
 # sets gaps
 gaps inner 2
-gaps outer 1
+gaps outer 4
 
 # align titles on left
 title_align left
@@ -256,7 +256,7 @@ exec_always --no-startup-id dunst -config ~/.config/i3/dunst
 exec_always --no-startup-id i3-battery-popup -n -L 15 -l 5
 
 # executes qbittorrent
-# exec_always --no-startup-id qbittorrent
+exec_always --no-startup-id qbittorrent
 
 # execute conky
 # exec_always --no-startup-id ~/.config/i3/conky.sh

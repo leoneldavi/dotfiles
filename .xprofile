@@ -3,30 +3,8 @@ export SCRIPT_DIR=/home/leonel/i3blocksScripts/
 light -N 0.02
 xset r rate 200 35
 setxkbmap us
-synclient tapbutton1=1
-synclient minspeed=2
-synclient maxspeed=2
-synclient accelfactor=0
 
-xrandr --output VGA-1 --newmode "640x480_100.00"   42.50  640 672 736 832  480 483 487 512 -hsync +vsync
-xrandr --addmode VGA-1 "640x480_100.00"
 xrandr --output VGA-1 --newmode "1280x960_50.00"   85.75  1280 1352 1480 1680  960 963 967 1024 interlace -hsync +vsync
 xrandr --addmode VGA-1 "1280x960_50.00"
-xrandr --output VGA-1 --newmode "1280x1024_100.00"   91.50  1280 1352 1480 1680  1024 1027 1034 1092 interlace -hsync +vsync
-xrandr --addmode VGA-1 "1280x1024_100.00"
-xrandr --output VGA-1 --newmode "1280x720_120.00"   77.50  1280 1344 1472 1664  720 723 728 778 interlace -hsync +vsync
-xrandr --addmode VGA-1 "1280x720_120.00"
 xrandr --newmode "1600x1200_80.00"  105.75  1600 1688 1848 2096  1200 1203 1207 1262 interlace -hsync +vsync
 xrandr --addmode VGA-1 "1600x1200_80.00"
-xrandr --newmode "1024x768_120.00"   66.75  1024 1080 1184 1344  768 771 775 830 interlace -hsync +vsync
-xrandr --addmode VGA-1 "1024x768_120.00"
-xrandr --newmode "1024x640_80.00"   72.25  1024 1080 1184 1344  640 643 649 673 -hsync +vsync
-xrandr --addmode VGA-1 "1024x640_80.00"
-xrandr --newmode "640x400_120.00"   43.00  640 672 736 832  400 403 409 432 -hsync +vsync
-xrandr --addmode VGA-1 "640x400_120.00"
-xrandr --newmode "1280x800_120.00"   87.00  1280 1352 1480 1680  800 803 809 864 interlace -hsync +vsync
-xrandr --addmode VGA-1 "1280x800_120.00"
-xrandr --newmode "1112x834_60.00"   79.00  1112 1176 1288 1464  834 837 841 900 interlace -hsync +vsync
-xrandr --addmode VGA-1 "1112x834_60.00"
-xrandr --newmode "1440x900_50.00"   90.50  1440 1520 1664 1888  900 903 909 960 interlace -hsync +vsync
-xrandr --addmode VGA-1 "1440x900_50.00"
