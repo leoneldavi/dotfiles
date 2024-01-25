@@ -14,5 +14,6 @@ After that, you are free to use:
 ```
 cd ~/.dotfiles
 stow .
+sudo stow root/ -t /
 ```
 And so running the scripts.
