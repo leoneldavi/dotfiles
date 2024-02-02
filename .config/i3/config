@@ -48,6 +48,7 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+w layout toggle tabbed split
 bindsym $mod+shift+space floating toggle
 bindsym $mod+space focus mode_toggle
+bindsym --whole-window $mod+button2 floating toggle
 bindsym $mod+a focus parent
 
 set $ws1 "1"
@@ -135,7 +136,7 @@ client.background       #ffffff
 
 bindsym --release $mod+Shift+s exec "scrot -z -s -e 'xclip -selection c -t image/png < $f && mv $f ~/Desktop/Screenshots'"
 exec_always --no-startup-id feh --bg-fill ~/Desktop/Wallpapers/Selected/*
-gaps inner 2
+gaps inner 1
 gaps outer 4
 title_align left
 # makes titlebars, have titles, and make the bars thin
@@ -145,8 +146,13 @@ for_window [all] title_window_icon padding 2px
 exec_always picom
 exec_always --no-startup-id dunst -config ~/.config/i3/dunst
 exec_always --no-startup-id i3-battery-popup -n -L 15 -l 5
-exec_always --no-startup-id qbittorrent
+exec_always --no-startup-id alttab
+#exec_always --no-startup-id qbittorrent
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 bindsym $mod+equal sticky toggle
 bindsym $mod+m exec ~/.config/i3/rename_workspace.sh
+bindsym $mod2+m exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
+bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: ' 
+
+focus_follows_mouse no
