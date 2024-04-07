@@ -25,8 +25,6 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $mod+comma exec "setxkbmap us"
 bindsym $mod+period exec "setxkbmap br"
 
-#bindsym $mod+s exec wmfocus -c hjkl
-bindsym $mod+s exec wmfocus -c 'qwerasdfzxcv'
 bindsym $mod+x focus left
 bindsym $mod+c focus right
 bindsym $mod+h focus left
@@ -128,8 +126,8 @@ bar {
 }
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #ffffff #dfdfdf #000000 #ffffff   #ffffff
-client.focused_inactive #808080 #c0c0c0 #000000 #ffffff   #c0c0c0
+client.focused          #ffffff #dfdfdf #000000 #ffffff   #c0c0c0
+client.focused_inactive #c0c0c0 #c0c0c0 #000000 #ffffff   #c0c0c0
 client.unfocused        #808080 #c0c0c0 #777777 #ffffff   #c0c0c0
 client.urgent           #ff0000 #ff0000 #c0c0c0 #ffffff   #c0c0c0
 client.placeholder      #000000 #c0c0c0 #000000 #000000   #c0c0c0
@@ -138,9 +136,8 @@ client.background       #ffffff
 
 bindsym --release $mod+Shift+s exec "scrot -z -s -e 'xclip -selection c -t image/png < $f && mv $f ~/Desktop/Screenshots'"
 exec_always --no-startup-id feh --bg-fill ~/Desktop/Wallpapers/Selected/*
+gaps inner 1
 gaps outer 4
-gaps left 40
-gaps right 40
 title_align left
 # makes titlebars, have titles, and make the bars thin
 for_window [class=".*"] border normal 1
@@ -149,12 +146,13 @@ for_window [all] title_window_icon padding 2px
 exec_always picom
 exec_always --no-startup-id dunst -config ~/.config/i3/dunst
 exec_always --no-startup-id i3-battery-popup -n -L 15 -l 5
-#exec_always --no-startup-id conky -c ~/.config/conky/conky.conf
+exec_always --no-startup-id alttab
 #exec_always --no-startup-id qbittorrent
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 bindsym $mod+equal sticky toggle
 bindsym $mod+m exec ~/.config/i3/rename_workspace.sh
-#bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: ' 
+bindsym $mod2+m exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
+bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: ' 
 
 focus_follows_mouse no

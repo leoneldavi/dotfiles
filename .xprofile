@@ -2,6 +2,7 @@ export TERMINAL=/usr/bin/alacritty
 export SCRIPT_DIR=/home/leonel/i3blocksScripts/
 light -N 0.02
 xset r rate 200 35
+xinput --set-prop 12 317 0
 setxkbmap us
 
 xrandr --output VGA-1 --newmode "1280x960_50.00"   85.75  1280 1352 1480 1680  960 963 967 1024 interlace -hsync +vsync
