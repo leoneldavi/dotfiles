@@ -1,48 +1,50 @@
-set $mod Mod1
-set $mod2 Mod4
+set $mod Mod4
+set $mod2 Mod1
 workspace_layout tabbed
 show_marks yes
-font pango:Tahoma Regular 8
+font pango: BmPlus HP 100LX 6x8 Regular 5
+#font pango: BmPlus HP 100LX 6x8 Regular 5
+#font pango:Tahoma Regular 8
+#font pango:Bm437 EverexME 5x8 Regular 5
 
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
-bindsym $mod+p exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+#bindsym $mod+p exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
-bindsym $mod+o exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+#bindsym $mod+o exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-bindsym XF86MonBrightnessUp exec --no-startup-id light -A 10
-bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 2
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 2 
 bindsym XF86ScreenSaver exec "i3lock -c 333333"
 bindsym XF86Launch1 exec "alacritty -e less ~/tutorial"
+bindsym XF86Display exec ~/.config/i3/cycle_displays.sh
+bindsym XF86RotateWindows exec ~/.config/i3/cycle_displays.sh
 floating_modifier $mod
 bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 bindcode $mod+40 exec "dmenu_run -fn 'BmPlus IBM VGA 8x16' -sb grey"
-bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+t reload
+bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+comma exec "setxkbmap us"
 bindsym $mod+period exec "setxkbmap br"
 
-#bindsym $mod+s exec wmfocus -c hjkl
-bindsym $mod+s exec wmfocus -c 'qwerasdfzxcv'
+#bindsym $mod+s exec wmfocus -c 'qwert12345'
 bindsym $mod+x focus left
 bindsym $mod+c focus right
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+Shift+x move left
+bindsym $mod+Shift+c move right
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Down move down#
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 bindsym $mod+v split toggle
@@ -51,39 +53,25 @@ bindsym $mod+w layout toggle tabbed split
 bindsym $mod+shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 bindsym --whole-window $mod+button2 floating toggle
+bindsym button3 floating toggle
+bindsym button2 kill
 bindsym $mod+a focus parent
 
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
-bindsym $mod+1 workspace number $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
-bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
-bindsym $mod+Shift+grave move container to workspace number $term
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+set $term "1"
+set $xorg0 "2"
+set $xorg1 "3"
+set $xorg2 "4"
+set $xorg3 "5"
+bindsym $mod+1 workspace number $term
+bindsym $mod+2 workspace number $xorg0
+bindsym $mod+3 workspace number $xorg1
+bindsym $mod+4 workspace number $xorg2
+bindsym $mod+5 workspace number $xorg3
+bindsym $mod+Shift+1 move container to workspace number $term
+bindsym $mod+Shift+2 move container to workspace number $xorg0
+bindsym $mod+Shift+3 move container to workspace number $xorg1
+bindsym $mod+Shift+4 move container to workspace number $xorg2
+bindsym $mod+Shift+5 move container to workspace number $xorg3
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -108,22 +96,25 @@ bindsym $mod+r mode "resize"
 bindsym $mod+b bar mode toggle
 
 bar {
-    font pango: Tahoma Regular 10
-	position top
-    tray_padding 0
-    status_command i3blocks -c "/etc/i3blocks.conf"
+  #font pango: Tahoma Regular 8
+  font pango: BmPlus HP 100LX 6x8 Regular 5
+  #font pango: BmPlus HP 100LX 6x8 Regular 6
+  position top
+  strip_workspace_numbers no
+  tray_padding 0
+  status_command i3blocks -c "/etc/i3blocks.conf"
 	i3bar_command i3bar --transparency
-    modifier none
+  modifier none
     colors {
-        background #c0c0c0
+        background #dfdfdf
         statusline #ffffff
         separator #666666
 
-        focused_workspace  #ffffff #dfdfdf #000000
-        active_workspace   #ffffff #c0c0c0 #000000
-        inactive_workspace #c0c0c0 #c0c0c0 #777777
+        focused_workspace  #dfdfdf #dfdfdf #000000
+        active_workspace   #dfdfdf #c0c0c0 #000000
+        inactive_workspace #dfdfdf #dfdfdf #999999
         urgent_workspace   #ff0000 #ff0000 #c0c0c0
-        binding_mode       #ff0000 #ff0000 #c0c0c0
+        binding_mode       #c0c0c0 #c0c0c0 #000000
     }
 }
 
@@ -137,18 +128,21 @@ client.placeholder      #000000 #c0c0c0 #000000 #000000   #c0c0c0
 client.background       #ffffff
 
 bindsym --release $mod+Shift+s exec "scrot -z -s -e 'xclip -selection c -t image/png < $f && mv $f ~/Desktop/Screenshots'"
-exec_always --no-startup-id feh --bg-fill ~/Desktop/Wallpapers/Selected/*
-gaps outer 4
-gaps left 40
-gaps right 40
+bindsym --release $mod+s exec "scrot -z -s - | xclip -selection c -t image/png"
+#exec_always --no-startup-id "feh --force-aliasing --bg-fill ~/Desktop/Wallpapers/Selected/*"
+exec_always --no-startup-id "feh --bg-fill ~/Desktop/Wallpapers/Selected/*"
 title_align left
 # makes titlebars, have titles, and make the bars thin
-for_window [class=".*"] border normal 1
+for_window [all] border normal
+default_border normal 0
+default_floating_border normal 1
+hide_edge_borders both
 # make icons on titlebars
-for_window [all] title_window_icon padding 2px
-exec_always picom
+for_window [all] title_window_icon padding 1px
+#exec_always picom
 exec_always --no-startup-id dunst -config ~/.config/i3/dunst
-exec_always --no-startup-id i3-battery-popup -n -L 15 -l 5
+#exec_always --no-startup-id i3-battery-popup -n -L 15 -l 5
+exec_always --no-startup-id alttab -mk Super_L -d 1
 #exec_always --no-startup-id conky -c ~/.config/conky/conky.conf
 #exec_always --no-startup-id qbittorrent
 bindsym $mod+Shift+minus move scratchpad
@@ -158,3 +152,4 @@ bindsym $mod+m exec ~/.config/i3/rename_workspace.sh
 #bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: ' 
 
 focus_follows_mouse no
+#workspace_auto_back_and_forth yes

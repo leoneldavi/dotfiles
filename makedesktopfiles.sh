@@ -5,3 +5,4 @@ mkdir ~/Desktop/Screenshots
 mkdir ~/Desktop/Wallpapers
 mkdir ~/Desktop/Wallpapers/Selected
 ln -s ~/Desktop/Downloads ~/Downloads
+ln -s /run/media/ ~/Devices

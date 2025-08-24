@@ -29,28 +29,56 @@ yellow = "#feff00"
 background = "#000000"
 foreground = "#ffffff"
 
-[font]
-size = 13.0
+#[font]
+#size = 10.0
+#[font.bold]
+#family = "MSX Screen 0 New"
+#style = "Bold"
+#[font.bold_italic]
+#family = "MSX Screen 0 New"
+#style = "Bold Italic"
+#[font.italic]
+#family = "MSX Screen 0 New"
+#style = "Italic"
+#[font.normal]
+#family = "MSX Screen 0 New"
+#style = "Regular"
 
+#!!!!
+
+[font]
+size = 10.0
 [font.bold]
 family = "BmPlus IBM VGA 8x16"
 style = "Bold"
-
 [font.bold_italic]
 family = "BmPlus IBM VGA 8x16"
-style = "Bold"
-
+style = "Bold Italic"
 [font.italic]
 family = "BmPlus IBM VGA 8x16"
-style = "Regular"
-
+style = "Italic"
 [font.normal]
 family = "BmPlus IBM VGA 8x16"
 style = "Regular"
+
+#[font]
+#size = 10.0
+#[font.bold]
+#family = "PxPlus HP 100LX 6x8"
+#style = "Bold"
+#[font.bold_italic]
+#family = "PxPlus HP 100LX 6x8"
+#style = "Bold Italic"
+#[font.italic]
+#family = "PxPlus HP 100LX 6x8"
+#style = "Italic"
+#[font.normal]
+#family = "PxPlus HP 100LX 6x8"
+#style = "Regular"
 
 [window]
 opacity = 0.9
 
 [window.padding]
-x = 3
-y = 3
+x = 0
+y = 0

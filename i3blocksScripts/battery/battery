@@ -86,7 +86,7 @@ if ($status eq 'Discharging') {
 		print "#000000\n";
 	}
 
-	if ($percent < 5) {
+	if ($percent < 15) {
 		exit(33);
 	}
 }

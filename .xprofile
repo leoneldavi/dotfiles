@@ -2,10 +2,31 @@ export TERMINAL=/usr/bin/alacritty
 export SCRIPT_DIR=/home/leonel/i3blocksScripts/
 light -N 0.02
 xset r rate 200 35
-xinput --set-prop 12 317 0
+xinput --set-prop "PS/2 Generic Mouse" 317 1
 setxkbmap us
 
-xrandr --output VGA-1 --newmode "1280x960_50.00"   85.75  1280 1352 1480 1680  960 963 967 1024 interlace -hsync +vsync
-xrandr --addmode VGA-1 "1280x960_50.00"
-xrandr --newmode "1600x1200_80.00"  105.75  1600 1688 1848 2096  1200 1203 1207 1262 interlace -hsync +vsync
-xrandr --addmode VGA-1 "1600x1200_80.00"
+#xrandr --output VGA-1 --newmode "1280x960_50.00"   85.75  1280 1352 1480 1680  960 963 967 1024 interlace -hsync +vsync
+#xrandr --addmode VGA-1 "1280x960_50.00"
+#xrandr --newmode "1600x1200_80.00"  105.75  1600 1688 1848 2096  1200 1203 1207 1262 interlace -hsync +vsync
+#xrandr --addmode VGA-1 "1600x1200_80.00"
+#xrandr --newmode "640x480i_120.00"   25.00  640 664 720 800  480 483 487 522 interlace -hsync +vsync
+#xrandr --addmode VGA-1 "640x480i_120.00"
+#xrandr --newmode "1920x1080_100" 207.36 1920 1928 1960 2000 1080 1119 1127 1133 +HSync -VSync
+#xrandr --addmode HDMI-1 "1920x1080_100"
+#xrandr --newmode "1280x720_144" 151.188 1280 1288 1320 1360 720 758 766 772 +HSync -VSync
+#xrandr --addmode HDMI-1 "1280x720_144"
+#xrandr --newmode "640x480_100.00"   42.50  640 672 736 832  480 483 487 512 -hsync +vsync
+#xrandr --addmode VGA-1 "640x480_100.00"
+#xrandr --newmode "1360x768_120.00"  183.75  1366 1463 1607 1856  768 771 781 826 -hsync +vsync
+#xrandr --addmode HDMI-1 "1360x768_120.00"
+
+xrandr --newmode "640x480_90.00_rb2"  32.46  640 648 680 720  480 487 495 501 +hsync -vsync
+xrandr --addmode LVDS1 "640x480_90.00_rb2"
+xrandr --newmode "640x360_90.00_rb2"  24.36  640 648 680 720  360 362 370 376 +hsync -vsync
+xrandr --addmode LVDS1 "640x360_90.00_rb2"
+xrandr --newmode "800x600_90.00_rb2"  49.58  800 808 840 880  600 612 620 626 +hsync -vsync
+xrandr --addmode LVDS1 "800x600_90.00_rb2"
+xrandr --newmode "1024x768_90.00_rb2"  79.69  1024 1032 1064 1104  768 788 796 802 +hsync -vsync
+xrandr --addmode LVDS1 "1024x768_90.00_rb2"
+
+xrandr --output LVDS1 --set "scaling mode" "Full" --filter nearest
